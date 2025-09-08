@@ -60,4 +60,28 @@ class Client:
     def contact_person(self, value):
         self.__contact_person = self.validate_name(value)
 
-    
+     # ========== ВАЛИДАЦИЯ ==========
+
+    @staticmethod
+    def validate_id(client_id: int) -> int:
+        if not isinstance(client_id, int) or client_id <= 0:
+            raise ValueError("ID клиента должен быть положительным числом")
+        return client_id
+
+    @staticmethod
+    def validate_name(name: str) -> str:
+        if not re.match(r'^[А-ЯЁ][а-яёА-ЯЁ\s\.\-]+$', name):
+            raise ValueError("Название/ФИО должно начинаться с заглавной буквы и содержать только буквы, пробелы, тире или точки")
+        return name.strip()
+
+    @staticmethod
+    def validate_address(address: str) -> str:
+        if len(address.strip()) < 5:
+            raise ValueError("Адрес слишком короткий")
+        return address.strip()
+
+    @staticmethod
+    def validate_phone(phone: str) -> str:
+        if not re.match(r'^\+?\d{7,15}$', phone):
+            raise ValueError("Телефон должен содержать от 7 до 15 цифр и может начинаться с +")
+        return phone
