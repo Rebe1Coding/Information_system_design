@@ -114,3 +114,20 @@ class Client:
 
     def __eq__(self, other):
         return isinstance(other, Client) and self.client_id == other.client_id
+
+class ShortClient(Client):
+    def __init__(self, client: Client):
+        super().__init__(
+            client.client_id,
+            client.name,
+            client.ownership_type,
+            client.address,                         
+            client.phone,
+            client.contact_person
+        )
+
+    def __str__(self):
+        return f"{self.name}, тел.: {self.phone}"
+
+    def full_info(self):
+        return f"{self.name} ({self.phone})"
