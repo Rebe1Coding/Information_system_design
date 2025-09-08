@@ -42,18 +42,24 @@ class Client {
     + from_string(data_str: str): Client
 }
 
-' ========== Наследник ShortClient ==========
+' ========== Класс ShortClient (КОМПОЗИЦИЯ) ==========
 class ShortClient {
-    -- КОНСТРУКТОР (переопределён) --
+    -- ПОЛЕ --
+    - _client: Client
+
+    -- КОНСТРУКТОР --
     + __init__(client: Client)
 
-    -- ПЕРЕОПРЕДЕЛЁННЫЕ МЕТОДЫ --
+    -- ГЕТТЕРЫ (только необходимые) --
+    + client_id: int {getter}
+    + name: str {getter}
+    + ownership_type: str {getter}
+    + phone: str {getter}
+
+    -- ПРЕДСТАВЛЕНИЕ ОБЪЕКТА --
     + __str__(): str
     + full_info(): str
 }
 
-' ========== НАСЛЕДОВАНИЕ ==========
-ShortClient --|> Client : наследует
-
-@enduml
-
+' ========== КОМПОЗИЦИЯ ==========
+ShortClient o-- Client : содержит
