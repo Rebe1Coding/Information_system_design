@@ -1,0 +1,82 @@
+[
+  {
+    "client_id": 1,
+    "name": "ООО Ромашка",
+    "ownership_type": "ООО",
+    "address": "Москва",
+    "phone": "+7 (495) 123-45-67",
+    "contact_person": "Иванов И.И."
+  },
+  {
+    "client_id": 2,
+    "name": "АО Вектор",
+    "ownership_type": "АО",
+    "address": "Санкт-Петербург",
+    "phone": "+7 (812) 234-56-78",
+    "contact_person": "Петров П.С."
+  },
+  {
+    "client_id": 3,
+    "name": "ИП Сидоров",
+    "ownership_type": "ИП",
+    "address": "Казань",
+    "phone": "+7 (843) 345-67-89",
+    "contact_person": "Сидоров А.В."
+  },
+  {
+    "client_id": 4,
+    "name": "ООО ТехноПрофи",
+    "ownership_type": "ООО",
+    "address": "Екатеринбург",
+    "phone": "+7 (343) 456-78-90",
+    "contact_person": "Кузнецова М.И."
+  },
+  {
+    "client_id": 5,
+    "name": "ЗАО Северсталь",
+    "ownership_type": "ЗАО",
+    "address": "Череповец",
+    "phone": "+7 (820) 567-89-01",
+    "contact_person": "Васильев Д.К."
+  },
+  {
+    "client_id": 6,
+    "name": "ООО ГлобалТрейд",
+    "ownership_type": "ООО",
+    "address": "Новосибирск",
+    "phone": "+7 (383) 678-90-12",
+    "contact_person": "Смирнова О.П."
+  },
+  {
+    "client_id": 7,
+    "name": "ИП Колесников",
+    "ownership_type": "ИП",
+    "address": "Ростов-на-Дону",
+    "phone": "+7 (863) 789-01-23",
+    "contact_person": "Колесников С.М."
+  },
+  {
+    "client_id": 8,
+    "name": "ООО СтройГарант",
+    "ownership_type": "ООО",
+    "address": "Краснодар",
+    "phone": "+7 (861) 890-12-34",
+    "contact_person": "Федоров А.Н."
+  },
+  {
+    "client_id": 9,
+    "name": "АО ТрансЛогистик",
+    "ownership_type": "АО",
+    "address": "Владивосток",
+    "phone": "+7 (423) 901-23-45",
+    "contact_person": "Николаева Е.В."
+  },
+  {
+    "client_id": 10,
+    "name": "ООО МедСервис",
+    "ownership_type": "ООО",
+    "address": "Нижний Новгород",
+    "phone": "+7 (831) 012-34-56",
+    "contact_person": "Орлова Т.С."
+  }
+]
