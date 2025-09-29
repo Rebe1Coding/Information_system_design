@@ -3,7 +3,7 @@ import json
 
 class Client:
     def __init__(self, client_id: int, name: str, ownership_type: str,
-                 address: str, phone: str, contact_person: str):
+                 address: str, phone: str, contact_person: str, credit_sum: float ):
         
         self.__client_id = self.validate_id(client_id)
         self.__name = self.validate_name(name)
@@ -11,9 +11,11 @@ class Client:
         self.__address = self.validate_address(address)
         self.__phone = self.validate_phone(phone)
         self.__contact_person = self.validate_name(contact_person)
+        self.__credit_sum = credit_sum
 
 
     # ========== ГЕТТЕРЫ / СЕТТЕРЫ ==========
+
 
     @property
     def client_id(self):
@@ -59,6 +61,17 @@ class Client:
     @contact_person.setter
     def contact_person(self, value):
         self.__contact_person = self.validate_name(value)
+
+    @property
+    def credit_sum(self):
+        return self.__credit_sum   
+     
+    @credit_sum.setter
+    def credit_sum(self, value):    
+        if not isinstance(value, (int, float)) or value < 0:
+            raise ValueError("Сумма кредита должна быть неотрицательным числом")
+        self.__credit_sum = float(value)
+
 
      # ========== ВАЛИДАЦИЯ ==========
 
@@ -115,22 +128,10 @@ class Client:
     def __eq__(self, other):
         return isinstance(other, Client) and self.client_id == other.client_id
 
-# class ShortClient(Client):
-#     def __init__(self, client: Client):
-#         super().__init__(
-#             client.client_id,
-#             client.name,
-#             client.ownership_type,
-#             client.address,                         
-#             client.phone,
-#             client.contact_person
-#         )
-
-#     def __str__(self):
-#         return f"{self.name}, тел.: {self.phone}"
-
-#     def full_info(self):
-#         return f"{self.name} ({self.phone})"
+    def get_short_info(self) -> str:
+        short_client  = ShortClient(self)
+        return short_client.full_info()
+    
 class ShortClient:
     def __init__(self, client: Client):
         self._client = client  # храним ссылку на оригинальный объект
